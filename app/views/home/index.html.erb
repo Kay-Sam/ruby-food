@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>What Should I Eat</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %> 
+  <%= javascript_include_tag "meals", defer: true %>
+</head>
+  
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"> <a <%= link_to "🍽 What Should I Eat", root_path %></a></div>
+  <div class="nav-links">
+    <a href="#meal-section">Meals</a>
+    <a href="#health-section">Health Tips</a>
+    <a href="#how-section">How it Works</a>
+  </div>
+  <button class="nav-cta" onclick="document.getElementById('meal-section').scrollIntoView({behavior:'smooth'})">
+    Get Started
+  </button>
+</nav>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div>
+    <div class="hero-badge"> Smart Meal Engine</div>
+    <h1>Eat <em>smarter</em>,<br>feel incredible.</h1>
+    <p class="hero-sub">
+      Instant meal suggestions and daily health insights — personalised, delicious, and nutritious.
+    </p>
+
+    <div class="hero-btns">
+      <button class="btn-meal btn-breakfast" onclick="suggestMeal('breakfast')">🌅 Breakfast</button>
+      <button class="btn-meal btn-lunch" onclick="suggestMeal('lunch')">☀️ Lunch</button>
+      <button class="btn-meal btn-dinner" onclick="suggestMeal('dinner')">🌙 Dinner</button>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="food-scene">
+     <img id="hero-food" class="food-illus" src="<%= asset_path('meals/jollof-rice.jpg') %>" alt="Meal">
+     <div class="food-bar">
+            <div class="food-bar-info">
+              <span class="food-lbl">Today's Pick</span>
+              <span class="food-nm" id="hero-name">Jollof Rice</span>
+            </div>
+            <span class="food-pill" id="hero-cal">Healthy ✓</span>
+          </div>
+        </div>
+   
+    </div>
+  </div>
+</div>
+
+<!-- MEAL SECTION -->
+<section id="meal-section">
+  <div class="loading" id="loading">
+    <div class="loader-ring"></div>
+    <p>Loading meal...</p>
+  </div>
+
+  <div class="meal-card" id="meal-card">
+    <div class="mc-inner">
+<div class="mc-left">
+  <img id="meal-image" src="" alt="Meal Image" style="width:100%; border-radius:12px;">
+</div>
+      <div class="mc-right">
+        <h2 id="meal-name"></h2>
+        <p id="meal-desc"></p>
+
+        <ol id="steps-list"></ol>
+
+        <a id="yt-link" target="_blank">Watch Recipe</a>
+        <a id="wa-link" class="btn-wa" target="_blank">Chat with Chef</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- HEALTH SECTION -->
+    <section id="health-section">
+      <div class="hs-inner">
+        <div class="hs-left">
+          <div class="divider"></div>
+          <h2>Daily Health Tip</h2>
+          <p>
+            Science-backed wellness insights refreshed daily to help you build
+            lasting healthy habits — personalised to your meal.
+          </p>
+        </div>
+        <div>
+          <div class="tip-card" id="tip-card">
+            <div class="tip-cat" id="tip-cat">Nutrition</div>
+            <h3 id="tip-title">Loading…</h3>
+            <p id="tip-body">Loading…</p>
+            <div class="tip-stats" id="tip-stats"></div>
+          </div>
+       <div class="tip-ph" id="tip-ph">
+  <span>💡</span>
+Chew slowly — it improves digestion and prevents overeating.
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-section">
+  <div class="section-title">
+    <h2>How It Works</h2>
+    <p>Three simple steps to smarter eating</p>
+  </div>
+
+  <div class="how-grid">
+    <div class="how-card">
+      <div class="how-icon">🍽</div>
+      <h3>Pick a Meal</h3>
+      <p>Choose breakfast, lunch, or dinner to get instant suggestions.</p>
+    </div>
+
+    <div class="how-card">
+      <div class="how-icon">🤖</div>
+      <h3>AI Suggests</h3>
+      <p>Our system generates meals based on nutrition and balance.</p>
+    </div>
+
+    <div class="how-card">
+      <div class="how-icon">💡</div>
+      <h3>Get Health Tips</h3>
+      <p>Receive daily science-backed tips tailored to your meal choice.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="cta-box">
+    <h2>Start Eating Smarter Today</h2>
+    <p>Get daily meals and health insights directly — no stress, just better food choices.</p>
+
+    <form class="cta-form" action="https://formspree.io/f/mykoydjl" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+
+      <button type="submit">Get Daily Tips</button>
+    </form>
+  </div>
+</section>
+
+    <div class="footer-wrap">
+      <footer>
+        <div class="footer-logo">🍽 What Should I Eat</div>
+        <p>© 2026 What Should I Eat. Nourishing better choices, every day.</p>
+<p>Created by <a href="https://kaysotech.com.ng" target="_blank" rel="noopener noreferrer" class="credits">Kaysotech</a></p>
+      </footer>
+    </div>
+
+<script>
+  const heroImages = [
+    { src: "<%= asset_path('meals/jollof-rice.jpg') %>", name: "Jollof Rice" },
+    { src: "<%= asset_path('meals/bread-beans.jpg') %>", name: "Bread & Beans" },
+    { src: "<%= asset_path('meals/moimoi.jpg') %>", name: "Moi Moi" },
+    { src: "<%= asset_path('meals/amala.jpg') %>", name: "Amala & Ewedu" },
+    { src: "<%= asset_path('meals/fried-rice.jpg') %>", name: "Fried Rice" }
+  ];
+
+  
+</script>
+</body>
+</html>
