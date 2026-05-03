@@ -76,9 +76,9 @@ Meal.create!([
   # =====================
 
   { name: "Ewa Agoyin", category: "lunch", emoji: "🍲",
-    image_url: "beans.jpg",
+    image_url: "meals/beans.jpg",
     description: "Soft beans with spicy caramelized pepper sauce.",
-    recipe_steps: "Boil beans until soft, prepare pepper sauce...",
+recipe_steps: "Soak beans overnight. Boil until soft. Blend pepper, onion, and oil. Fry sauce until fragrant. Mix beans with sauce and simmer for 10–15 minutes. Serve hot with bread or plantain.",
     youtube_url: "https://youtu.be/_kkCHjacG7U?si=FMg-teZtSKOj1og_"
   },
 
@@ -149,7 +149,7 @@ Meal.create!([
     youtube_url: "https://youtu.be/qz5AsrqOhNc?si=z7mrq78nWPdIzn7B" },
 
   { name: "Egusi & Eba", category: "dinner", emoji: "🍲",
-    image_url: "https://images.unsplash.com/photo-1604908815783-f5b8b6f7c8d4?w=800&q=80&auto=format",
+    image_url: "meals/eba.jpg",
     description: "Classic Nigerian melon-seed soup with cassava swallow.",
     recipe_steps: "Cook meats with seasoning until tender. Mix ground egusi with water; add to pot in clumps. Add palm oil, pepper, stockfish; simmer 15 min. Stir in greens; serve with eba.",
     youtube_url: "https://youtube.com/shorts/3TuMcGyOIvk?si=6xSDnHHaR6-h5syP" },
