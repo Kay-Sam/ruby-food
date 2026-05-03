@@ -26,9 +26,6 @@ gem "pg"
 gem "tzinfo-data", platforms: %i[windows jruby]
 
 # Caching / jobs / cable
-gem "solid_cache"
-gem "solid_queue"
-
 
 # ENV variables (IMPORTANT - only ONE version)
 gem "dotenv-rails", groups: [:development, :test]

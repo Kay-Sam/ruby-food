@@ -9,10 +9,7 @@ Bundler.require(*Rails.groups)
 module Food
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
-config.load_defaults 8.1
-
-# Disable Solid Cable
-config.solid_cable.enabled = false
+    config.load_defaults 8.1
 
     # Please, add to the `ignore` list any other `lib` subdirectories that do
     # not contain `.rb` files, or that should not be reloaded or eager loaded.
