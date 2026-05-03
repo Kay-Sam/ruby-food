@@ -2,14 +2,20 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
+  url: <%= ENV['DATABASE_URL'] %>
+
+production:
+  primary:
+    <<: *default
+
+  cable:
+    <<: *default
+
+  queue:
+    <<: *default
 
 development:
   <<: *default
-  database: food_development
 
 test:
   <<: *default
-  database: food_test
-
-production:
-  url: <%= ENV["DATABASE_URL"] %>
