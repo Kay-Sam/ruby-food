@@ -93,6 +93,30 @@ nav {
   box-shadow: var(--shadow-md);
 }
 
+@media (max-width: 400px) {
+.nav-logo {
+  font-family: "Fraunces", serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-cta {
+  background: var(--ink);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 6px 12px;
+}
+.nav-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+}
 /* HERO */
 .hero-wrap {
   max-width: 1280px;
@@ -730,6 +754,7 @@ footer p {
   }
 }
 /* RESPONSIVE */
+
 @media (max-width: 900px) {
   .hero-wrap {
     grid-template-columns: 1fr;
