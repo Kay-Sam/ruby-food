@@ -35,8 +35,21 @@ async function suggestMeal(type) {
   loading.classList.add('active');
 
   try {
-    const res = await fetch(`/meals/random/${type}`);
+    const res = await fetch(`/meals/random?category=${type}`);
     const m = await res.json();
+
+
+// SPONSORED LOGIC HERE
+if (m.sponsored) {
+  document.getElementById("sponsored-badge").style.display = "inline-block";
+
+  document.getElementById("wa-link").href = m.sponsor_link;
+  document.getElementById("wa-link").innerText = "Order Now";
+} else {
+  document.getElementById("sponsored-badge").style.display = "none";
+
+  document.getElementById("wa-link").innerText = "Chat with Chef";
+}
 
     // Hide loader
     loading.classList.remove('active');

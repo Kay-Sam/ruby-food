@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root "home#index"
 
-  get "/meals/random/:category", to: "meals#random"
+
+
+  get "/meals/random", to: "meals#random"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

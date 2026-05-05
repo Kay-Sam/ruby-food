@@ -899,3 +899,11 @@ footer p {
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(255, 0, 0, 0.35);
 }
+#sponsored-badge {
+  background: gold;
+  color: black;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  margin-left: 10px;
+}

@@ -10,14 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_23_135949) do
+ActiveRecord::Schema[8.1].define(version: 2026_05_05_142227) do
   create_schema "extensions"
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "extensions.pg_stat_statements"
   enable_extension "extensions.pgcrypto"
   enable_extension "extensions.uuid-ossp"
-  enable_extension "graphql.pg_graphql"
   enable_extension "pg_catalog.plpgsql"
   enable_extension "vault.supabase_vault"
 
@@ -29,6 +28,9 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_23_135949) do
     t.string "image_url"
     t.string "name"
     t.text "recipe_steps"
+    t.string "sponsor_link"
+    t.string "sponsor_name"
+    t.boolean "sponsored"
     t.datetime "updated_at", null: false
     t.string "youtube_url"
   end
