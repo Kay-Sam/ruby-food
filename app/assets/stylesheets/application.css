@@ -505,7 +505,9 @@ h1 em {
   box-shadow: 0 8px 20px rgba(255, 0, 0, 0.28);
 }
 .btn-wa {
-  display: none;
+  display: inline-flex;
+  width: auto;
+  max-width: 200px;
   align-items: center;
   gap: 8px;
   background: #25d366;
