@@ -15,6 +15,19 @@ Meal.create!([
     recipe_steps: "Soak black-eyed peas 2 hours and peel. Blend with onion and pepper. Whisk batter until fluffy. Deep fry scoops until golden. Serve hot with warm pap.",
     youtube_url: "https://youtu.be/r2hVi_f4M6g?si=fcgfpPhZeVl0xfHS" },
 
+    {
+          name: "Victorious Akara Chips",
+    category: "breakfast",
+    emoji: "🥙",
+    image_url: "meals/akara-chips.jpg",
+    description: "Crispy akara chips perfect for your morning boost",
+    recipe_steps: "Available fresh daily. Delivered hot and crunchy",
+    sponsored: true,
+    sponsor_name: "Victorious Kitchen",
+    sponsor_link: "https://wa.me/23460886466"
+  },
+    
+
   { name: "Yam & Egg Sauce", category: "breakfast", emoji: "🍠",
    image_url: "meals/yam-egg.jpg",
     description: "Boiled white yam with peppery tomato and egg sauce.",
@@ -75,13 +88,58 @@ Meal.create!([
   # ☀️ LUNCH (10)
   # =====================
 
+   {
+    name: "Crunchy Chin Chin Pack",
+    category: "lunch",
+    emoji: "🍪",
+    image_url: "meals/chinchin.jpg",
+    description: "Sweet crunchy chin chin for all occasions",
+    recipe_steps: "Perfect for events and everyday snacking",
+    sponsored: true,
+    sponsor_name: "Victorious Chips",
+    sponsor_link: "https://wa.me/23460886466"
+  },
+  {
+    name: "Golden Meat Pie",
+    category: "lunch",
+    emoji: "🥧",
+    image_url: "meals/meatpie.jpg",
+    description: "Flaky crust meat pie with juicy filling",
+    recipe_steps: "Prepared fresh and sealed with flavor",
+    sponsored: true,
+    sponsor_name: "Pearl cakes and gourmet services",
+    sponsor_link: "https://wa.me/2349057600899"
+  },
+
   { name: "Ewa Agoyin", category: "lunch", emoji: "🍲",
     image_url: "meals/beans.jpg",
     description: "Soft beans with spicy caramelized pepper sauce.",
 recipe_steps: "Soak beans overnight. Boil until soft. Blend pepper, onion, and oil. Fry sauce until fragrant. Mix beans with sauce and simmer for 10–15 minutes. Serve hot with bread or plantain.",
     youtube_url: "https://youtu.be/_kkCHjacG7U?si=FMg-teZtSKOj1og_"
   },
-
+{
+  name: "Jollof Rice Party Pack",
+  category: "lunch",
+  emoji: "🍛",
+  image_url: "meals/jollof.jpg",
+  description: "Hot smoky jollof rice available for delivery",
+  recipe_steps: "Prepared fresh on order",
+  youtube_url: "",
+  sponsored: true,
+  sponsor_name: "Pearl Kitchen",
+  sponsor_link: "https://wa.me/2349057600899"
+},
+   {
+    name: "Party Small Chops",
+    category: "lunch",
+    emoji: "🍢",
+    image_url: "meals/smallchops.jpg",
+    description: "Perfect mix of samosa, spring rolls, and puff puff",
+    recipe_steps: "Ideal for events and hangouts",
+    sponsored: true,
+    sponsor_name: "Pearl cakes and gourmet services",
+    sponsor_link: "https://wa.me/2349057600899"
+  },
 
   { name: "Masa (Waina)", category: "breakfast", emoji: "🍙",
     image_url: "meals/waina.jpg",

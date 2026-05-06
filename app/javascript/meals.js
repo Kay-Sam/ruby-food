@@ -42,17 +42,20 @@ async function suggestMeal(type) {
 // SPONSORED LOGIC HERE
 if (m.sponsored) {
   document.getElementById("sponsored-badge").style.display = "inline-block";
+
+  document.getElementById("sponsor-info").style.display = "block";
   document.getElementById("sponsor-name").textContent = m.sponsor_name;
 
   document.getElementById("wa-link").href = m.sponsor_link;
   document.getElementById("wa-link").innerText = "Order Now";
 } else {
   document.getElementById("sponsored-badge").style.display = "none";
+
+  document.getElementById("sponsor-info").style.display = "none";
   document.getElementById("sponsor-name").textContent = "";
 
   document.getElementById("wa-link").innerText = "Chat with Chef";
 }
-
     // Hide loader
     loading.classList.remove('active');
 
