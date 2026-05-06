@@ -42,11 +42,13 @@ async function suggestMeal(type) {
 // SPONSORED LOGIC HERE
 if (m.sponsored) {
   document.getElementById("sponsored-badge").style.display = "inline-block";
+  document.getElementById("sponsor-name").textContent = m.sponsor_name;
 
   document.getElementById("wa-link").href = m.sponsor_link;
   document.getElementById("wa-link").innerText = "Order Now";
 } else {
   document.getElementById("sponsored-badge").style.display = "none";
+  document.getElementById("sponsor-name").textContent = "";
 
   document.getElementById("wa-link").innerText = "Chat with Chef";
 }
@@ -73,16 +75,34 @@ if (m.image_url && m.image_url.startsWith("http")) {
 img.alt = m.name || "Meal Image";
 
     // Recipe steps
-    document.getElementById('steps-list').innerHTML =
-      m.recipe_steps
-        ? m.recipe_steps
-            .split('.')
-            .map(s => s.trim())
-            .filter(s => s.length > 0)
-            .map(s => `<li>${s}</li>`)
-            .join('')
-        : "<li>No steps available</li>";
+ const stepsList = document.getElementById('steps-list');
 
+if (m.recipe_steps) {
+  const items = m.recipe_steps
+    .split('.')
+    .map(s => s.trim())
+    .filter(s => s.length > 0);
+
+  if (m.sponsored) {
+    // Use bullet style
+    stepsList.innerHTML = items
+      .map(s => `<li>• ${s}</li>`)
+      .join('');
+
+    stepsList.style.listStyleType = "none";
+    stepsList.style.paddingLeft = "0";
+  } else {
+    // Use normal numbered steps
+    stepsList.innerHTML = items
+      .map(s => `<li>${s}</li>`)
+      .join('');
+
+    stepsList.style.listStyleType = "decimal";
+    stepsList.style.paddingLeft = "20px";
+  }
+} else {
+  stepsList.innerHTML = "<li>No steps available</li>";
+}
     // YouTube link
     const yt = document.getElementById('yt-link');
     if (m.youtube_url) {
@@ -93,9 +113,21 @@ img.alt = m.name || "Meal Image";
     }
 
     // WhatsApp link
-    const wa = document.getElementById('wa-link');
-    wa.href = `https://wa.me/2347013019155?text=Help me cook ${encodeURIComponent(m.name)}`;
-    wa.classList.add('visible');
+const wa = document.getElementById('wa-link');
+
+if (m.sponsored) {
+  document.getElementById("sponsored-badge").style.display = "inline-block";
+
+  wa.href = m.sponsor_link;
+  wa.innerText = "Order Now";
+} else {
+  document.getElementById("sponsored-badge").style.display = "none";
+
+  wa.href = `https://wa.me/2347013019155?text=Help me cook ${encodeURIComponent(m.name)}`;
+  wa.innerText = "Chat with Chef";
+}
+
+wa.classList.add('visible');
 
     // Show card
     card.classList.add('visible');

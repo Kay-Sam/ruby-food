@@ -900,10 +900,13 @@ footer p {
   box-shadow: 0 10px 25px rgba(255, 0, 0, 0.35);
 }
 #sponsored-badge {
+  display: inline-block;
   background: gold;
   color: black;
-  padding: 5px 12px;
-  border-radius: 20px;
+  padding: 4px 10px;
+  border-radius: 14px;
   font-size: 12px;
-  margin-left: 10px;
+  font-weight: 600;
+  width: fit-content;
+  margin: 8px 0;
 }
