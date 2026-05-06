@@ -485,7 +485,7 @@ h1 em {
   padding-top: 8px;
 }
 .btn-yt {
-  display: inline-flex;
+  display: inline-block;
   align-items: center;
   gap: 8px;
   background: #ff0000;
@@ -522,7 +522,7 @@ h1 em {
   animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .btn-wa.visible {
-  display: inline-flex;
+  display: inline-block;
 }
 @keyframes popIn {
   from {
@@ -909,4 +909,23 @@ footer p {
   font-weight: 600;
   width: fit-content;
   margin: 8px 0;
+}
+
+.sponsor-info {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.sponsor-label {
+  font-weight: 500;
+  color: #999;
+}
+
+.sponsor-name {
+  font-weight: 600;
+  color: #222;
 }
