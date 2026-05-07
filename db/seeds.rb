@@ -23,7 +23,7 @@ Meal.create!([
     description: "Crispy akara chips perfect for your morning boost",
     recipe_steps: "Available fresh daily. Delivered hot and crunchy",
     sponsored: true,
-    sponsor_name: "Victorious Kitchen",
+    sponsor_name: "Victorious Chips",
     sponsor_link: "https://wa.me/2348060886466"
   },
     
