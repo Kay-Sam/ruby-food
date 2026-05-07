@@ -8,7 +8,7 @@ class MealsController < ApplicationController
     normal = meals.where(sponsored: [false, nil])
 
     meal =
-      if sponsored.exists? && rand < 0.9
+      if sponsored.exists? && rand < 0.25
         sponsored.order("RANDOM()").first
       else
         normal.order("RANDOM()").first

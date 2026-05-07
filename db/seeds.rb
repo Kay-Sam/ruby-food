@@ -24,7 +24,7 @@ Meal.create!([
     recipe_steps: "Available fresh daily. Delivered hot and crunchy",
     sponsored: true,
     sponsor_name: "Victorious Kitchen",
-    sponsor_link: "https://wa.me/23460886466"
+    sponsor_link: "https://wa.me/2348060886466"
   },
     
 
@@ -97,7 +97,7 @@ Meal.create!([
     recipe_steps: "Perfect for events and everyday snacking",
     sponsored: true,
     sponsor_name: "Victorious Chips",
-    sponsor_link: "https://wa.me/23460886466"
+    sponsor_link: "https://wa.me/2348060886466"
   },
   {
     name: "Golden Meat Pie",
